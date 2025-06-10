@@ -10,6 +10,9 @@ log.setLevel(logging.INFO)
 class Channels(Base):
     endpoint = "/channels"
 
+    def get_channels(self, options):
+        return self.client.get(self.endpoint, options=options)
+                               
     def create_channel(self, options):
         return self.client.post(self.endpoint, options=options)
 
